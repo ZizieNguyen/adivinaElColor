@@ -9,22 +9,25 @@ body {
   padding: 0;
   width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main";
+  grid-template-rows: 20vh 1fr;
 }
 
 header {
   width: 100%;
-  height: 20%;
+  height: 20vh;
   background-color: black;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: fixed;
+
   top: 0;
+  grid-area: header;
 }
 
 header h1 {
@@ -33,18 +36,49 @@ header h1 {
 
 main {
   width: 100%;
-  display: flex;
-  flex-direction: row;
+  height: 80vh;
   background: linear-gradient(to bottom, #ffdab9, #ffa500);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  grid-area: main;
 }
 
 #franja {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
-#caja-de-color-RGB {
+.niveles {
+  flex-direction: row;
+}
+
+#aciertos-fallos {
+  justify-content: flex-end;
+}
+
+#cajas-principal {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.caja-de-color-RGB {
+  width: 200px;
+  height: 200px;
+  background-color: orange;
+  border: 1px solid;
+  border-radius: 50%;
+  margin: 1rem;
 }
 
 #cajas-de-color {
+  display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   margin: 1rem;
@@ -52,10 +86,10 @@ main {
 }
 
 .caja-de-color {
-  width: 100px; /* Ancho del círculo */
-  height: 100px; /* Altura del círculo (igual al ancho para hacerlo un círculo perfecto) */
+  width: 100px;
+  height: 100px;
   background-color: orange;
-  border: 1px solid; /* Color del círculo */
+  border: 1px solid;
   border-radius: 50%;
-  margin: 1 rem;
+  margin: 0.5rem;
 }
