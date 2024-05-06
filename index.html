@@ -7,14 +7,37 @@
     <title>Adivina el color</title>
   </head>
   <body>
-    <div class="caja-de-color1"></div>
-    <div class="caja-de-color2"></div>
-    <div class="caja-de-color3"></div>
-    <div class="caja-de-color4"></div>
-    <div class="caja-de-color5"></div>
-    <div class="caja-de-color6"></div>
-    <div class="caja-de-color7"></div>
-    <div class="caja-de-color8"></div>
+    <header>
+      <h1>Adivina el color</h1>
+      <p></p>
+    </header>
+
+    <main>
+      <section id="franja">
+        <button id="Instruccion">Instrucción</button>
+        <div class="caja-de-color-RGB"></div>
+        <div class="niveles">
+          <p>Elige un nivel</p>
+          <button class="nivel-facil">Fácil</button>
+          <button class="nivel-dificil">Difícil</button>
+        </div>
+        <div>
+          <div class="aciertos"></div>
+          <div class="fallos"></div>
+        </div>
+        <button id="reset">Jugar de nuevo</button>
+      </section>
+      <section id="cajas-de-color">
+        <div class="caja-de-color1"></div>
+        <div class="caja-de-color2"></div>
+        <div class="caja-de-color3"></div>
+        <div class="caja-de-color4"></div>
+        <div class="caja-de-color5"></div>
+        <div class="caja-de-color6"></div>
+        <div class="caja-de-color7"></div>
+        <div class="caja-de-color8"></div>
+      </section>
+    </main>
 
     <script src="./scripts.js"></script>
   </body>

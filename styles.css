@@ -3,3 +3,89 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+header {
+  background-color: rgb(94, 131, 176);
+  font-size: 20px;
+  height: 120px;
+  margin: 0px;
+  padding: 10px;
+}
+p {
+  display: inline-block;
+  margin: 2px;
+  padding: 5px;
+}
+table {
+  width: 100%;
+}
+td {
+  border: solid;
+  border-color: black;
+  border-radius: 17px;
+  border-width: 1px;
+  height: 100px;
+}
+#cuerpo {
+  background: #999999;
+  border: solid;
+  border-width: 1px;
+  font: 24px Helvetica;
+  height: 250px;
+  margin: 5%;
+}
+#headerText {
+  display: inline;
+  margin: 10px;
+  width: 70%;
+}
+#rgb {
+  border-width: 2px;
+  border-style: dotted;
+  display: inline-block;
+  font-size: 50px;
+  margin-bottom: 10px;
+  margin-left: 30%;
+  margin-top: 10px;
+  padding: 2px;
+  text-align: center;
+}
+#dificultadPanel {
+  background-color: rgb(94, 131, 176);
+  display: inline-block;
+  border-width: 1px;
+  float: none;
+  margin-right: 5%;
+  padding: 0px;
+  text-align: center;
+  width: 20%;
+}
+#easy {
+  border-radius: 5px;
+  display: block;
+  height: 25px;
+  margin: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+#hard {
+  border-radius: 5px;
+  display: block;
+  margin: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 25px;
+}
+#fila2 {
+  visibility: hidden;
+}
+#racha {
+  float: left;
+  margin-left: 15%;
+  margin-top: 0px;
+}
+#record {
+  float: right;
+  margin-right: 15%;
+  margin-top: 0px;
+}
