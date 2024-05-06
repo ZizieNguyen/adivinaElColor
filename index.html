@@ -9,33 +9,40 @@
   <body>
     <header>
       <h1>Adivina el color</h1>
-      <p></p>
+      <p>Según el código RGB</p>
     </header>
 
     <main>
       <section id="franja">
         <button id="Instruccion">Instrucción</button>
-        <div class="caja-de-color-RGB"></div>
         <div class="niveles">
           <p>Elige un nivel</p>
           <button class="nivel-facil">Fácil</button>
           <button class="nivel-dificil">Difícil</button>
         </div>
         <div>
-          <div class="aciertos"></div>
-          <div class="fallos"></div>
+          <div class="aciertos">
+            Aciertos: <strong><span id="contador-de-aciertos">0</span></strong>
+          </div>
+          <div class="fallos">
+            Fallos: <strong><span id="contador-de-fallos">0</span></strong>
+          </div>
         </div>
         <button id="reset">Jugar de nuevo</button>
+        <section>
+          <div class="caja-de-color-RGB"></div>
+        </section>
       </section>
       <section id="cajas-de-color">
-        <div class="caja-de-color1"></div>
-        <div class="caja-de-color2"></div>
-        <div class="caja-de-color3"></div>
-        <div class="caja-de-color4"></div>
-        <div class="caja-de-color5"></div>
-        <div class="caja-de-color6"></div>
-        <div class="caja-de-color7"></div>
-        <div class="caja-de-color8"></div>
+        <div class="caja-de-color"></div>
+        <div class="caja-de-color"></div>
+        <div class="caja-de-color"></div>
+        <div class="caja-de-color"></div>
+        <div class="caja-de-color"></div>
+        <div class="caja-de-color"></div>
+        <div class="caja-de-color"></div>
+        <div class="caja-de-color"></div>
+        <div class="caja-de-color"></div>
       </section>
     </main>
 
