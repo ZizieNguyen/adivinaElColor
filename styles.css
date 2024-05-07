@@ -62,22 +62,27 @@ main {
   justify-content: flex-end;
 }
 
-#cajas-principal {
+#contenedorDeCajaPrincipal {
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.caja-de-color-RGB {
+#cajaPrincipal {
   width: 200px;
   height: 200px;
-  background-color: orange;
+  background-color: rgb(red, green, blue);
   border: 1px solid;
   border-radius: 50%;
+  margin: 2rem;
+  color: white;
+}
+
+#colorAleatorio {
   margin: 1rem;
 }
 
-#cajas-de-color {
+#contenedorDeCajas {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -85,10 +90,10 @@ main {
   justify-content: space-between;
 }
 
-.caja-de-color {
+.caja {
   width: 100px;
   height: 100px;
-  background-color: orange;
+  background-color: rgb(red, green, blue);
   border: 1px solid;
   border-radius: 50%;
   margin: 0.5rem;
