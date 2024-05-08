@@ -8,6 +8,7 @@
 }
 
 body {
+  font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -20,42 +21,55 @@ body {
 }
 
 header {
-  width: 100%;
-  height: 20vh;
+  padding: 50px;
   background-color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  grid-area: header;
+  text-align: center;
 }
 
 h1 {
   color: white;
   font-family: "Lakki Reddy", serif;
   font-weight: 400;
-  font-style: normal;
 }
 
-h2 {
+.contador {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+aside{
+  flex: 50%;
+  padding: 20px;
+}
+
+section{
+  flex: 50%;
+  padding: 20px;
+
+}
+
+@media screen and (max-width:500px){
+  }
+}
+
+/* h2 {
   color:white;
   margin: 2px;
   padding: 5px;
   font-family: "Open Sans", sans-serif;
   font-size: larger;
-}
+} */
 
-/* No sé cómo hacer para que el h3 esté más pegado a las instrucciones */
+/* No sé cómo hacer para que el h3 esté más pegado a las instrucciones
 h3 { 
   color: black;
   margin: 2px;
   padding: 30px;
   font-family: "Open Sans", sans-serif;
-}
+} */
 
 
-p {
+/* p {
   color: black;
   margin: 2px;
   padding: 5px;
@@ -63,57 +77,46 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 
 main {
   width: 100%;
-  height: 80vh;
-  background: linear-gradient(to bottom, #ffdab9, #ffa500);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
-  padding: 0;
   grid-area: main;
 }
 
 /* Según Luis lo ideal y más fácil es hacer un pop-up de instrucciones antes de empezar a jugar.
     Luego se podría añadir un botón que te recupere ese pop-up. */
-#franjaInstrucciones {
+/* #franjaInstrucciones {
   width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-#contador {
-  width: 90%;
-  display: flex;
-  justify-content: flex-start;
-}
-
-/* .niveles {
-  flex-direction: row;
 } */
 
-/* Las vidas se representarán con corazones con relleno. Una vez se eliminen podrían aparecer sin relleno, solo trazo. */
+
+/* Las vidas se representarán con corazones con relleno. Una vez se eliminen aparecen sin relleno, solo trazo. */
 #vidas
 
-#contenedorDeCajaPrincipal {
-  flex-direction: column;
+section{
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* El círculo central que esté en pleno centro de la pantalla.
-Su trazo podría ser super fino y que tenga algo de sombra para diferenciarlo del fondo */
+
 #cajaPrincipal {
-  width: 200px;
-  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
   background-color: rgb(red, green, blue);
   border: 1px solid;
   border-radius: 50%;
@@ -130,16 +133,18 @@ con un trazo muy muy fino y con algo de sombra para diferenciarse del fondo */
 #contenedorDeCajas {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   margin: 1rem;
   justify-content: space-between;
 }
 
 .caja {
+  display: flex;
   width: 100px;
   height: 100px;
   background-color: rgb(red, green, blue);
   border: 1px solid;
+  color: white;
   border-radius: 50%;
   margin: 0.5rem;
 }
