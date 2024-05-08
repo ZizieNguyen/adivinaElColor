@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Agrega este código a tu archivo styles.css */
+
+header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px 0; /* Añadimos un poco de espacio alrededor del texto */
+}
+
+.infoPartida {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.infoPartida div {
+    min-width: 200px;
+    padding: 1rem;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.infoPartida button {
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    border-radius: 24px;
+}
+
+.muestraColor {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#rgb {
+    padding: 2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#muestra {
+    width: 200px;
+    height: 200px;
+    border-color: #000;
+    border-radius: 50%;
+    border: 2px solid;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opciones {
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.opciones div {
+    width: 140px;
+    height: 140px;
+    border-color: #000;
+    border-radius: 50%;
+    border: 2px solid;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

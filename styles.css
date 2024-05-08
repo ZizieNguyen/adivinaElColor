@@ -37,20 +37,17 @@ h1 {
   flex-wrap: wrap;
 }
 
-aside{
+aside {
   flex: 50%;
   padding: 20px;
 }
 
-section{
+section {
   flex: 50%;
   padding: 20px;
-
 }
 
-@media screen and (max-width:500px){
-  }
-}
+@media screen and (max-width:500px){}
 
 /* h2 {
   color:white;
