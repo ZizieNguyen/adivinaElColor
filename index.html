@@ -8,19 +8,34 @@
   </head>
   <body>
     <header>
-      <h1>Adivina el color</h1>
+      <h1>¡Adivina el color!</h1>
+      <!--- Yo este h2 de "Según..." lo quitaría del header y lo añadiría en las instrucciones como un tip, una ayuda extra.
+         Poca gente se basará en eso para jugar (lo harán a ojo) y no tiene tanta importancia-->
       <p>Según el código RGB</p>
     </header>
 
     <main>
-      <section id="franja">
+      <!-- No sé cómo hacer para que el h3 esté más pegado a las instrucciones -->
+      <!-- <h3>Instrucciones</h3>
+      <section id="franjaInstrucciones"></section>
+      <p>¡Juguemos! Encuentra el color idéntico a la muestra del círculo central. Aunque algunos se parezcan, ¡solo hay una opción válida!
+        Si el contador llega a tres fallos pierdes… ¿Superarás el récord?</p> -->
+     
+        
+        <!-- Los niveles son opcionales y para el final del todo, pero Luis me recomendó esto:
+        con cada acierto se rebaja la diferencia que puede haber en los colores y así se va dificultando el nivel poco a poco.
         <button id="Instruccion">Instrucción</button>
-        <div class="niveles">
-          <p>Elige un nivel</p>
-          <button class="nivel-facil">Fácil</button>
-          <button class="nivel-dificil">Difícil</button>
-        </div>
-        <div id="aciertos-fallos">
+      <div class="niveles">
+        <p>Elige un nivel</p>
+        <button class="nivel-facil">Fácil</button>
+        <button class="nivel-dificil">Difícil</button>
+      </div> -->
+
+
+      <section id="contador"> 
+        <div>
+          <!-- Primero, pondría lo positivo (aciertos). 
+            Si nos da tiempo y sabemos hacerlo ponemos el récord y algún mensaje pop-up para quien lo supere-->
           <div class="aciertos">
             Aciertos: <strong><span id="contador-de-aciertos">0</span></strong>
           </div>
@@ -29,6 +44,11 @@
           </div>
           <button id="reset">Jugar más</button>
           <span id="mensaje"></span>
+        </div>
+      </section>
+      <section id="vidas">
+        <div>
+          
         </div>
       </section>
 

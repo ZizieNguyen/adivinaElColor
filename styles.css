@@ -23,16 +23,13 @@ header {
   width: 100%;
   height: 20vh;
   background-color: black;
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   top: 0;
   grid-area: header;
 }
-
 
 h1 {
   color: white;
@@ -44,6 +41,34 @@ h1 {
     "YEAR" 1979;
   letter-spacing: 3px;
 }
+
+h2 {
+  color:white;
+  margin: 2px;
+  padding: 5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: larger;
+}
+
+/* No sé cómo hacer para que el h3 esté más pegado a las instrucciones */
+h3 { 
+  color: black;
+  margin: 2px;
+  padding: 30px;
+  font-family: "Open Sans", sans-serif;
+}
+
+
+p {
+  color: black;
+  margin: 2px;
+  padding: 5px;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 main {
   width: 100%;
@@ -59,19 +84,28 @@ main {
   grid-area: main;
 }
 
-#franja {
-  width: 100%;
+/* Según Luis lo ideal y más fácil es hacer un pop-up de instrucciones antes de empezar a jugar.
+    Luego se podría añadir un botón que te recupere ese pop-up. */
+#franjaInstrucciones {
+  width: 90%;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.niveles {
-  flex-direction: row;
+#contador {
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
 }
 
-#aciertos-fallos {
-  justify-content: flex-end;
-}
+/* .niveles {
+  flex-direction: row;
+} */
+
+/* Las vidas se representarán con corazones con relleno. Una vez se eliminen podrían aparecer sin relleno, solo trazo. */
+#vidas
 
 #contenedorDeCajaPrincipal {
   flex-direction: column;
@@ -79,6 +113,8 @@ main {
   align-items: center;
 }
 
+/* El círculo central que esté en pleno centro de la pantalla.
+Su trazo podría ser super fino y que tenga algo de sombra para diferenciarlo del fondo */
 #cajaPrincipal {
   width: 200px;
   height: 200px;
@@ -93,6 +129,8 @@ main {
   margin: 1rem;
 }
 
+/* Los círculos con la gama de tonalidades que vayan abajo en la pantalla,
+con un trazo muy muy fino y con algo de sombra para diferenciarse del fondo */
 #contenedorDeCajas {
   display: flex;
   flex-direction: row;
