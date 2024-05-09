@@ -46,7 +46,7 @@ function comprobarColorSeleccionado() {
   const colorSeleccionado = this.style.backgroundColor;
   if (colorSeleccionado === colorAleatorio) {
     mensajeSpan.textContent = "¡Correcto!";
-    contadorAciertosSpan.textContent++;
+    contadorAciertosSpan.textContent++;s
   } else {
     mensajeSpan.textContent = "¡Incorrecto!";
     contadorFallosSpan.textContent++;
