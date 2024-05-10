@@ -106,7 +106,7 @@ header button {
     align-items: center;
 }
 
-.modal {
+.popUpInicial {
   display: flex; 
   justify-content: center;
   align-content: center;
@@ -120,25 +120,24 @@ header button {
   overflow: auto; 
 }
 
-.modal-content {
+.contenidoPopUp {
   position: relative;
   background-color: #fefefe;
-  padding: 60px;
+  padding: 50px;
   border: 2px solid black;
   border-radius: 40px;
-  width: 80%;
   font-size: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center; 
   align-items: center;
   text-align: center; 
+  margin: 170px;
 }
 
-#juguemosBtn {
+#botonJuguemos {
     background-color: white; 
     color: black; 
-    /* padding: 10px 20px;  */
     font-size: 20px; 
     font-weight: bold;
     border: dashed 2px transparent;
@@ -149,7 +148,7 @@ header button {
     margin-top: 20px;
 }
 
-#juguemosBtn:hover {
+#botonJuguemos:hover {
     font-family: "Lakki Reddy", serif;
     font-size: 30px;
     border: none;

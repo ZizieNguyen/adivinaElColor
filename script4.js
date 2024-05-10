@@ -12,7 +12,7 @@ const nuevoJuego = document.getElementById("nuevoJuego");
 // Pop-up inicial
 function mostrarModal(mensaje) {
   let modal = document.getElementById("popUpInicial");
-  let modalMessage = modal.querySelector("#modal-message");
+  let modalMessage = modal.querySelector("#mensajePopUp");
   modalMessage.textContent = mensaje;
   modal.style.display = "block";
 }
@@ -22,13 +22,8 @@ window.alert = function(mensaje) {
   mostrarModal(mensaje);
 };
 
-// // Cierre de modal (X)
-// document.querySelector(".close").addEventListener("click", function() {
-//   document.getElementById("myModal").style.display = "none";
-// });
-
 // Botón "¡Juguemos!"
-document.getElementById("juguemosBtn").addEventListener("click", function() {
+document.getElementById("botonJuguemos").addEventListener("click", function() {
   document.getElementById("popUpInicial").style.display = "none";
 });
 
