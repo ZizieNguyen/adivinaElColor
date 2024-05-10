@@ -97,7 +97,7 @@ function generarOpcionesSaturacion(colorBase) {
 // El RGB se convierte en  HSL para modificar la luminosidad
 const hslBase = rgbToHsl(colorBase[0], colorBase[1], colorBase[2]);
 
-// Definición de saturación y luminosidad base
+// Definición de saturación y luminosidad
 const saturacionBase = hslBase[1];
 const luminosidadBase = hslBase[2];
 
@@ -127,7 +127,10 @@ const rgbColor = hslToRgb(hslBase[0], saturacionBase, luminosidad);
 function mostrarColor() {
   const colorMuestra = colorAleatorio(); // Generar color aleatorio para la muestra
   const opcionesSaturacion = generarOpcionesSaturacion(colorMuestra.match(/\d+/g)); // Obtener RGB del color de la muestra
-  codigo.textContent = colorMuestra;
+  const rojo = colorMuestra.match(/\d+/g)[0];
+  const verde = colorMuestra.match(/\d+/g)[1];
+  const azul = colorMuestra.match(/\d+/g)[2];
+  codigo.textContent = `R: ${rojo} G: ${verde} B: ${azul}`; // Mostrar el color en el formato deseado
   muestra.style.backgroundColor = colorMuestra;
 
 // Cambiar color de las cajas de opciones
@@ -184,3 +187,4 @@ nuevoJuego.addEventListener("click", reiniciarJuego);
 
 // Mostrar el primer color al cargar la página
 mostrarColor();
+

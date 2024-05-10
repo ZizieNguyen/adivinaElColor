@@ -38,6 +38,7 @@ header button {
     border-radius: 24px;
 }
 
+
 .infoPartida {
     background-color: #aaa;
     display: flex;
@@ -72,6 +73,28 @@ header button {
     font-size: 1.3rem;
     font-weight: bold;
 }
+
+/* Modificar el diseño del código de color */
+/* #codigo {
+    display: flex;
+    flex-direction: column;
+} */
+
+#codigo span {
+    margin-bottom: 5px;
+}
+
+/* Estilo para cada valor de color */
+#codigo span:nth-child(odd) {
+    font-weight: bold; /* Hacer que las etiquetas de color sean negritas */
+    margin-right: 5px; /* Espacio entre la etiqueta y el número */
+}
+
+/* Estilo para cada número de color */
+#codigo span:nth-child(even) {
+    font-weight: normal; /* Hacer que los números de color no estén en negrita */
+}
+
 
 #muestra {
     width: 200px;
@@ -150,8 +173,30 @@ header button {
 
 #botonJuguemos:hover {
     font-family: "Lakki Reddy", serif;
-    font-size: 30px;
+    font-size: 25px;
     border: none;
     height: 20px;
     margin-top: 20px;
 }
+
+.menu {
+    display: flex;
+}
+
+.menuHamburguesa {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .menuHamburguesa {
+        display: block; /* El botón de hamburguesa se muestra en pantallas más pequeñas */
+    }
+
+    .menu {
+        display: none; /* El menú se oculta en pantallas más pequeñas */
+    }
+}
+
+@media screen and (max-width: 799px) {
+    .menuHambur
+
