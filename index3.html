@@ -10,7 +10,10 @@
 <body>
     <header class="cabecera">
         <h1 class="titulo">¡Adivina el color!</h1>
-        <div>
+        <div class="menuHamburguesa">
+            <button id="hamburguesa">&#9776</button>
+        </div>
+        <div class="menu">
             <button id="nuevoJuego">Jugar de nuevo</button>
             <button id="comoJugar">¿Cómo jugar?</button>
         </div> 
@@ -18,21 +21,21 @@
     <main>
         <section class="infoPartida">
             <div>
-                <p>Aciertos: <span id="aciertos">0</span></p>
+                <p>Aciertos: <strong><span id="aciertos">0</span></strong></p>
             </div>
 
-            <div>
+            <div class="contenedorMensaje">
                 <p><span id="mensaje"></span></p>
             </div>
 
             <div>
-                <p>Fallos: <span id="fallos">0</span></p>
+                <p>Fallos: <strong><span id="fallos">0</span></strong></p>
             </div>
         </section>
 
         <section class="cajaPrincipal">
-            <div id="codigo">Red: <span>0</span> Green: <span>0</span> Blue: <span>0</span></div>
             <div id="muestra"></div>
+            <div id="codigo">Red: <span>0</span> Green: <span>0</span> Blue: <span>0</span></div>
         </section>
 
         <section class="cajaOpciones">
@@ -44,14 +47,15 @@
             <div class="opcion" id="6"></div>
             <div class="opcion" id="7"></div>
             <div class="opcion" id="8"></div>
-        </section>        
+        </section>  
+        
+        <div class="popUpInicial" id="popUpInicial">
+            <div class="contenidoPopUp">
+              <p id="mensajePopUp">¡Bienvenidx a Adivina el color! ¿Cuántos colores puedes adivinar?</p>
+              <button id="botonJuguemos">¡Juguemos!</button>
+            </div>
+          </div>      
     </main>
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p id="modal-message"></p>
-      </div>
-    </div>
     <script src="script3.js"></script>
 </body>
 </html>

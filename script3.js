@@ -1,6 +1,6 @@
 "use strict";
 
-// Obtenmos los elementos del DOM
+// DOM
 const opciones = document.querySelectorAll(".opcion");
 const muestra = document.getElementById("muestra");
 const codigo = document.getElementById("codigo");
@@ -8,20 +8,19 @@ const aciertos = document.getElementById("aciertos");
 const fallos = document.getElementById("fallos");
 const mensaje = document.getElementById("mensaje");
 const nuevoJuego = document.getElementById("nuevoJuego");
+const mensajeInicial = "¡Bienvenidx a Adivina el color! ¿Cuántos colores puedes adivinar?";
 
-// Creamos un alert de inicio del juego
-alert("¡Juguemos! ¿Cuántos colores puedes adivinar?");
 
-// Declaramos los contadores de fallos y aciertos
+// Contadores de fallos y aciertos
 let contadorFallos = 0;
 let contadorAciertos = 0;
 
-// Generamos un número aleatorio entre 0 y 255
+// Número aleatorio entre 0 y 255 (color RGB)
 function numeroAleatorio() {
     return Math.floor(Math.random() * 256);
 }
 
-// Obtenemos un color RGB aleatorio
+// RGB aleatorio
 function colorAleatorio() {
     const r = numeroAleatorio();
     const g = numeroAleatorio();
@@ -73,31 +72,31 @@ function hslToRgb(h, s, l) {
     return [r * 255, g * 255, b * 255];
 }
 
-// Con está función obtenemos variaciones en la saturación para el colores de las opciones
+// Variaciones en la saturación de las opciones
 function generarOpcionesSaturacion(colorBase) {
   
-    // Convertirmos color base a HSL para modificar la luminosidad
+    // Conversión RGB -> HSL para modificar la luminosidad
     const hslBase = rgbToHsl(colorBase[0], colorBase[1], colorBase[2]);
 
-    // Definimos saturación y luminosidad base
+    // Definición de saturación y luminosidad
     const saturacionBase = hslBase[1];
     const luminosidadBase = hslBase[2];
 
-    // Indicamos el número de opciones a generar
+    // Número de opciones a generar
     const numOpciones = 8;
 
-    // Calculamos el rango de luminosidad para distribuir las opciones
+    // Rango de luminosidad para las opciones
     const rangoLuminosidad = 0.8; // Porcentaje del rango de luminosidad a utilizar
     const pasoLuminosidad = rangoLuminosidad / (numOpciones - 1);
 
-    // Generamos las opciones de colores con variaciones de luminosidad
+    // Opciones de colores con variaciones de luminosidad
     const opciones = [];
     for (let i = 0; i < numOpciones; i++) {
 
-        // Calculamos la luminosidad para la opción actual
+        // Calculo de la luminosidad para la opción actual
         const luminosidad = Math.min(1, Math.max(0, luminosidadBase + pasoLuminosidad * i - rangoLuminosidad / 2));
         
-        // Convertimos a RGB el color modificado en HSL
+        // Conversión HSL -> RGB
         const rgbColor = hslToRgb(hslBase[0], saturacionBase, luminosidad);
         opciones.push(`rgb(${rgbColor[0]}, ${rgbColor[1]}, ${rgbColor[2]})`);
     }
@@ -105,24 +104,24 @@ function generarOpcionesSaturacion(colorBase) {
     return opciones;
 }
 
-// Mostramos un color aleatorio en la caja "muestra" y generamos las cajas de "opciones"
+// Color aleatorio en la caja "muestra" y "opciones"
 function mostrarColor() {
     const colorMuestra = colorAleatorio(); // Generar color aleatorio para la muestra
     const opcionesSaturacion = generarOpcionesSaturacion(colorMuestra.match(/\d+/g)); // Obtener RGB del color de la muestra
     codigo.textContent = colorMuestra;
     muestra.style.backgroundColor = colorMuestra;
 
-    // Cambiar color de las cajas de opciones
+    // Cambio color de opciones
     opciones.forEach((opcion, index) => {
         opcion.style.backgroundColor = opcionesSaturacion[index];
     });
 
-    // Elegir aleatoriamente una de las opciones para que coincida con el color de la muestra
+    // Aleatoriedad en una opción que coincida con la muestra
     const opcionCorrecta = Math.floor(Math.random() * opciones.length);
     opciones[opcionCorrecta].style.backgroundColor = colorMuestra;
 }
 
-// Con esta función comprobamos si el color seleccionado es correcto
+// Comprobación de si la selección es correcta
 function comprobarColorSeleccionado() {
   const colorCorrecto = codigo.textContent;
   const colorSeleccionado = this.style.backgroundColor;
@@ -131,7 +130,7 @@ function comprobarColorSeleccionado() {
       aciertos.textContent++;
       contadorAciertos++;
       if (contadorAciertos > 2) {
-          alert("¡Has ganado!")
+          alert("¡Felicidades! Has ganado :)")
           reiniciarJuego();
       }
   } else {
@@ -139,14 +138,14 @@ function comprobarColorSeleccionado() {
       fallos.textContent++;
       contadorFallos++;
       if (contadorFallos > 3) {
-          alert("¡Has perdido!");
+          alert("Oh, qué pena, has perdido :(");
           reiniciarJuego();
       } 
   }
   mostrarColor();
 }
 
-// Con esta función definimos que sucede al reiniciar el juego
+// Qué sucede al reiniciar el juego
 function reiniciarJuego() {
     aciertos.textContent = 0;
     fallos.textContent = 0;
@@ -155,13 +154,23 @@ function reiniciarJuego() {
     mensaje.textContent = "";
     mostrarColor();
 }
+// Pop-up inicial
+function mostrarPopUpInicial() {
+    document.getElementById("mensajePopUp").textContent = mensajeInicial;
+    document.getElementById("popUpInicial").style.display = "flex";
+}
+window.addEventListener("load", mostrarPopUpInicial);
+document.getElementById("botonJuguemos").addEventListener("click", function() {
+    document.getElementById("popUpInicial").style.display = "none"; // Ocultar el pop-up
+});
 
-// Asignamos el evento click a las cajas de opciones
+
+// Evento click a las cajas de opciones
 opciones.forEach((opcion) => {
     opcion.addEventListener("click", comprobarColorSeleccionado);
 });
 
-// Asignamos el evento al botón para jugar de nuevo
+// Evento al botón para jugar de nuevo
 nuevoJuego.addEventListener("click", reiniciarJuego);
 
 // Mostramos el primer color al cargar la página
