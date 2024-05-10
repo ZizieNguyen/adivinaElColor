@@ -149,7 +149,7 @@ const colorSeleccionado = this.style.backgroundColor;
     aciertos.textContent++;
     contadorAciertos++;
     if (contadorAciertos > 2) {
-        alert("¡Has ganado!")
+        alert("¡Felicidades! ¡Has ganado!")
         reiniciarJuego();
     }
 } else {
@@ -157,7 +157,7 @@ const colorSeleccionado = this.style.backgroundColor;
     fallos.textContent++;
     contadorFallos++;
     if (contadorFallos > 3) {
-        alert("¡Has perdido!");
+        alert("Oh, qué pena, has perdido :(");
         reiniciarJuego();
     } 
 }
