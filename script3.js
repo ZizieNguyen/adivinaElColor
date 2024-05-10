@@ -104,11 +104,15 @@ function generarOpcionesSaturacion(colorBase) {
     return opciones;
 }
 
-// Color aleatorio en la caja "muestra" y "opciones"
+// Color aleatorio de "muestra" y "opciones"
 function mostrarColor() {
     const colorMuestra = colorAleatorio(); // Generar color aleatorio para la muestra
     const opcionesSaturacion = generarOpcionesSaturacion(colorMuestra.match(/\d+/g)); // Obtener RGB del color de la muestra
     codigo.textContent = colorMuestra;
+    const rojo = colorMuestra.match(/\d+/g)[0];
+  const verde = colorMuestra.match(/\d+/g)[1];
+  const azul = colorMuestra.match(/\d+/g)[2];
+  codigo.textContent = `R: ${rojo} G: ${verde} B: ${azul}`; 
     muestra.style.backgroundColor = colorMuestra;
 
     // Cambio color de opciones

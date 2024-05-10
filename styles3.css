@@ -53,6 +53,10 @@ header button {
     justify-content: center;
 }
 
+.infoPartida div {
+    font-weight: normal;
+}
+
 .cajaPrincipal {
     padding: 70px;
     min-height: 300px;
