@@ -11,7 +11,7 @@ const nuevoJuego = document.getElementById("nuevoJuego");
 
 // Pop-up inicial
 function mostrarModal(mensaje) {
-  let modal = document.getElementById("myModal");
+  let modal = document.getElementById("popUpInicial");
   let modalMessage = modal.querySelector("#modal-message");
   modalMessage.textContent = mensaje;
   modal.style.display = "block";
@@ -29,7 +29,7 @@ window.alert = function(mensaje) {
 
 // Botón "¡Juguemos!"
 document.getElementById("juguemosBtn").addEventListener("click", function() {
-  document.getElementById("myModal").style.display = "none";
+  document.getElementById("popUpInicial").style.display = "none";
 });
 
 // Alerta inicial -> después se convierte en pop-up
