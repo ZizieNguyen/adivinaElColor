@@ -117,16 +117,16 @@ header button {
 }
 
 .popUp {
-    display: none; /* Mostrar el pop-up por defecto */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    position: fixed; /* Posicionamiento fijo para que esté por encima de todo */
-    top: 0; /* Desde la parte superior */
-    left: 0; /* Desde la izquierda */
-    width: 100%; /* Ancho completo */
-    height: 100%; /* Altura completa */
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semi-transparente */
-    z-index: 999; /* Capa superior */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999; 
 }
 
 #popUpPerdido {
@@ -151,6 +151,63 @@ header button {
     align-items: center;
     text-align: center; 
 }
+
+#popUpComoJugar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: auto;
+    border-radius: 20px;
+    text-align: center;
+    color: #000;
+}
+
+#popUpComoJugar .instrucciones {
+    background-color: #fefefe;
+    padding: 8vw;
+    max-width: 90%; 
+    max-height: 50%;
+    border: 2px solid black;
+    border-radius: 150px;
+    font-size: 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    text-align: center; 
+}
+
+#popUpComoJugar .botonJuguemos {
+    background-color: white; 
+    color: black; 
+    font-size: 3vw; 
+    font-weight: bold;
+    border: dashed 2px transparent;
+    border-radius: 50px; 
+    cursor: pointer;     
+    transition: font-size 0.3s;
+    height: 3vw;
+    margin-top: 30px;
+}
+
+#popUpComoJugar .botonJuguemos:hover {
+    font-family: "Lakki Reddy", serif;
+    font-size: 4vw;
+    border: none;
+    height: 3vw;
+    margin-top: 30px;
+}
+
+
 
 #botonJuguemos {
     background-color: white; 

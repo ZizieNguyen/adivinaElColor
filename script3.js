@@ -9,6 +9,9 @@ const fallos = document.getElementById("fallos");
 const mensaje = document.getElementById("mensaje");
 const nuevoJuego = document.getElementById("nuevoJuego");
 const mensajeInicial = "¡Bienvenidx a Adivina el color! ¿Cuántos colores puedes adivinar?";
+const comoJugarButton = document.getElementById('comoJugar');
+const popUpComoJugar = document.getElementById('popUpComoJugar');
+const cerrarPopUpButton = document.getElementById('cerrarPopUp');
 
 // Contadores de fallos y aciertos
 let contadorFallos = 0;
@@ -176,6 +179,21 @@ function mostrarPopUpPerdido() {
     document.getElementById("popUpPerdido").style.display = "flex"; 
 }
 
+// Pop-up ¿Cómo jugar?
+function mostrarPopUpComoJugar() {
+    document.getElementById("popUpComoJugar").style.display = "block";
+}
+
+function cerrarPopUp(popUpId) {
+    document.getElementById(popUpId).style.display = "none";
+}
+
+// Botón ¿Cómo jugar?
+document.getElementById("comoJugar").addEventListener("click", mostrarPopUpComoJugar);
+comoJugarButton.addEventListener('click', () => {
+    popUpComoJugar.style.display = 'flex';
+});
+    
 // Click para jugar de nuevo tras ganar
 document.getElementById("popUpGanado").querySelector(".botonDeNuevo").addEventListener("click", function() {
     document.getElementById("popUpGanado").style.display = "none";
