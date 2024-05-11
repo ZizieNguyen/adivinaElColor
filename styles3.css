@@ -57,6 +57,10 @@ header button {
     font-weight: normal;
 }
 
+#mensaje {
+    font-weight: bold; /* Aplicar negrita al mensaje */
+}
+
 .cajaPrincipal {
     padding: 70px;
     min-height: 300px;
