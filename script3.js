@@ -104,17 +104,16 @@ function generarOpcionesSaturacion(colorBase) {
     return opciones;
 }
 
-// Color aleatorio de "muestra" y "opciones"
+// Color aleatorio en la caja "muestra" y "opciones"
 function mostrarColor() {
     const colorMuestra = colorAleatorio(); // Generar color aleatorio para la muestra
     const opcionesSaturacion = generarOpcionesSaturacion(colorMuestra.match(/\d+/g)); // Obtener RGB del color de la muestra
     codigo.textContent = colorMuestra;
-    const rojo = colorMuestra.match(/\d+/g)[0];
-  const verde = colorMuestra.match(/\d+/g)[1];
-  const azul = colorMuestra.match(/\d+/g)[2];
-  codigo.textContent = `R: ${rojo} G: ${verde} B: ${azul}`; 
     muestra.style.backgroundColor = colorMuestra;
 
+    // RGB más atractivo
+    codigo.textContent = `R: ${colorMuestra.match(/\d+/g)[0]} G: ${colorMuestra.match(/\d+/g)[1]} B: ${colorMuestra.match(/\d+/g)[2]}`;
+    
     // Cambio color de opciones
     opciones.forEach((opcion, index) => {
         opcion.style.backgroundColor = opcionesSaturacion[index];
@@ -128,7 +127,7 @@ function mostrarColor() {
 // Comprobación de si la selección es correcta
 function comprobarColorSeleccionado() {
   const colorCorrecto = codigo.textContent;
-  const colorSeleccionado = this.style.backgroundColor;
+  const colorSeleccionado = `R: ${this.style.backgroundColor.match(/\d+/g)[0]} G: ${this.style.backgroundColor.match(/\d+/g)[1]} B: ${this.style.backgroundColor.match(/\d+/g)[2]}`;
   if (colorSeleccionado === colorCorrecto) {
       mensaje.textContent = "¡Has acertado!";
       aciertos.textContent++;
