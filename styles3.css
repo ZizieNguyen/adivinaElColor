@@ -112,10 +112,30 @@ header button {
     overflow: auto; 
 }
 
+.popUp {
+    display: none; /* Mostrar el pop-up por defecto */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    position: fixed; /* Posicionamiento fijo para que esté por encima de todo */
+    top: 0; /* Desde la parte superior */
+    left: 0; /* Desde la izquierda */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semi-transparente */
+    z-index: 999; /* Capa superior */
+}
+
+#popUpPerdido {
+    display: none;
+}
+
+#popUpGanado {
+    display: none;
+}
+
 .contenidoPopUp {
     background-color: #fefefe;
     padding: 8vw;
-    margin: 0 auto;
     max-width: 90%; 
     max-height: 50%;
     border: 2px solid black;
@@ -142,6 +162,27 @@ header button {
 }
 
 #botonJuguemos:hover {
+    font-family: "Lakki Reddy", serif;
+    font-size: 4vw;
+    border: none;
+    height: 3vw;
+    margin-top: 30px;
+}
+
+.botonDeNuevo {
+    background-color: white; 
+    color: black; 
+    font-size: 3vw; 
+    font-weight: bold;
+    border: dashed 2px transparent;
+    border-radius: 50px; 
+    cursor: pointer;     
+    transition: font-size 0.3s;
+    height: 3vw;
+    margin-top: 30px;
+}
+
+.botonDeNuevo:hover {
     font-family: "Lakki Reddy", serif;
     font-size: 4vw;
     border: none;
@@ -196,4 +237,5 @@ header button {
 @media screen and (max-width: 799px) {
     .menuHamburguesa {
         display: block; /* El botón de hamburguesa se muestra en pantallas más pequeñas */
-    }
+    } 
+}

@@ -10,7 +10,6 @@ const mensaje = document.getElementById("mensaje");
 const nuevoJuego = document.getElementById("nuevoJuego");
 const mensajeInicial = "¡Bienvenidx a Adivina el color! ¿Cuántos colores puedes adivinar?";
 
-
 // Contadores de fallos y aciertos
 let contadorFallos = 0;
 let contadorAciertos = 0;
@@ -28,7 +27,7 @@ function colorAleatorio() {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-// Función parar pasar de RGB a HSL
+// Pasar de RGB a HSL (para editar iluminación)
 function rgbToHsl(r, g, b) {
     r /= 255, g /= 255, b /= 255;
     const max = Math.max(r, g, b), min = Math.min(r, g, b);
@@ -49,7 +48,7 @@ function rgbToHsl(r, g, b) {
     return [h, s, l];
 }
 
-// Función para pasar de HSL a RGB
+// Pasar de HSL a RGB
 function hslToRgb(h, s, l) {
     let r, g, b;
     if (s === 0) {
@@ -104,7 +103,7 @@ function generarOpcionesSaturacion(colorBase) {
     return opciones;
 }
 
-// Color aleatorio en la caja "muestra" y "opciones"
+// Color aleatorio de "muestra" y "opciones"
 function mostrarColor() {
     const colorMuestra = colorAleatorio(); // Generar color aleatorio para la muestra
     const opcionesSaturacion = generarOpcionesSaturacion(colorMuestra.match(/\d+/g)); // Obtener RGB del color de la muestra
@@ -132,8 +131,8 @@ function comprobarColorSeleccionado() {
       mensaje.textContent = "¡Has acertado!";
       aciertos.textContent++;
       contadorAciertos++;
-      if (contadorAciertos > 2) {
-          alert("¡Felicidades! Has ganado :)")
+      if (contadorAciertos > 3) {
+          mostrarPopUpGanado();
           reiniciarJuego();
       }
   } else {
@@ -141,7 +140,7 @@ function comprobarColorSeleccionado() {
       fallos.textContent++;
       contadorFallos++;
       if (contadorFallos > 3) {
-          alert("Oh, qué pena, has perdido :(");
+          mostrarPopUpPerdido();
           reiniciarJuego();
       } 
   }
@@ -157,16 +156,37 @@ function reiniciarJuego() {
     mensaje.textContent = "";
     mostrarColor();
 }
+
 // Pop-up inicial
 function mostrarPopUpInicial() {
     document.getElementById("mensajePopUp").textContent = mensajeInicial;
     document.getElementById("popUpInicial").style.display = "flex";
 }
 window.addEventListener("load", mostrarPopUpInicial);
-document.getElementById("botonJuguemos").addEventListener("click", function() {
-    document.getElementById("popUpInicial").style.display = "none"; // Ocultar el pop-up
+    document.getElementById("botonJuguemos").addEventListener("click", function() {
+    document.getElementById("popUpInicial").style.display = "none"; 
 });
 
+// Pop-up ganar o perder
+function mostrarPopUpGanado() {
+    document.getElementById("popUpGanado").style.display = "flex"; 
+}
+
+function mostrarPopUpPerdido() {
+    document.getElementById("popUpPerdido").style.display = "flex"; 
+}
+
+// Click para jugar de nuevo tras ganar
+document.getElementById("popUpGanado").querySelector(".botonDeNuevo").addEventListener("click", function() {
+    document.getElementById("popUpGanado").style.display = "none";
+    reiniciarJuego();
+});
+
+// Click para jugar de nuevo tras perder
+document.getElementById("popUpPerdido").querySelector(".botonDeNuevo").addEventListener("click", function() {
+    document.getElementById("popUpPerdido").style.display = "none";
+    reiniciarJuego();
+});
 
 // Evento click a las cajas de opciones
 opciones.forEach((opcion) => {

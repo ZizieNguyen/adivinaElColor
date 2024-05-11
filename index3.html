@@ -55,10 +55,20 @@
               <button id="botonJuguemos">¡Juguemos!</button>
             </div>
         </div>     
-        <div id="popUps" style="display: none;">
-            <p id="mensajePopUp"></p>
-            <button onclick="cerrarPopUp()">Cerrar</button>
+
+        <div class="popUp" id="popUpGanado" style="display: none;"> 
+            <div class="contenidoPopUp">
+                <p>¡Felicidades! Has ganado :)</p>
+                <button onclick="cerrarPopUp('popUpGanado')" class="botonDeNuevo">¡Juguemos de nuevo!</button>
+            </div>
         </div>
+        
+        <div class="popUp" id="popUpPerdido" style="display: none;"> 
+            <div class="contenidoPopUp">
+                <p>Oh, qué pena, has perdido :(</p>
+                <button onclick="cerrarPopUp('popUpPerdido')" class="botonDeNuevo">¡Juguemos de nuevo!</button>
+            </div>
+        </div>        
           
     </main>
     <script src="script3.js"></script>
