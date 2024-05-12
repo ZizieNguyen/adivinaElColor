@@ -11,11 +11,15 @@
     <header class="cabecera">
         <h1 class="titulo">¡Adivina el color!</h1>
         <div class="menuHamburguesa">
-            <button id="hamburguesa">&#9776</button>
-        </div>
-        <div class="menu">
-            <button id="nuevoJuego">Jugar de nuevo</button>
-            <button id="comoJugar">¿Cómo jugar?</button>
+          <button id="hamburguesa"onclick="toggleMenu()">
+            <span class="iconoHamburguesa">&#9776</span>
+            <span class="iconoCerrar oculto">&#10006;</span>
+          </button>
+        
+          <div class="menu">
+             <button id="nuevoJuego">Jugar de nuevo</button>
+             <button id="comoJugar">¿Cómo jugar?</button>
+          </div>
         </div> 
         <div class="popUpComoJugar" id="popUpComoJugar">
             <div class="instrucciones">

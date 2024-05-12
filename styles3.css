@@ -1,302 +1,428 @@
-@import url('https://fonts.googleapis.com/css2?family=Lakki+Reddy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lakki+Reddy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
 }
 
 header {
-    background-color: #000;
-    color: #fff;
-    padding: 3%;
-    padding-top: 5%;
-    display: flex;
-    justify-content: space-between;
+  background-color: #000;
+  color: #fff;
+  padding: 3%;
+  padding-top: 5%;
+  display: flex;
+  justify-content: space-between;
 }
 
 header h1 {
-    font-family: "Lakki Reddy", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: calc(3vw + 1rem);
+  font-family: "Lakki Reddy", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: calc(3vw + 1rem);
 }
 
 header button {
-    background-color: transparent;
-    color: #fff;
-    padding: 15px;
-    margin-right: 1rem;
-    font-size: 1rem;
-    border: 1px solid #fff;
-    border-radius: 50px;
+  background-color: transparent;
+  color: #fff;
+  padding: 15px;
+  margin-right: 1rem;
+  font-size: 1rem;
+  border: 1px solid #fff;
+  border-radius: 50px;
 }
 
 .infoPartida {
-    margin: 1rem;
-    background-color: transparent;
-    border: 2px solid #000;
-    border-radius: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  margin: 1rem;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .infoPartida div {
-    min-width: 200px;
-    padding: 0.5rem;
-    font-size: 1.3rem;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
+  min-width: 200px;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
 }
 
 .infoPartida div {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 #mensaje {
-    font-weight: bold; /* Aplicar negrita al mensaje */
+  font-weight: bold; /* Aplicar negrita al mensaje */
 }
 
 .cajaPrincipal {
-    padding: 70px;
-    min-height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  padding: 70px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #muestra {
-    width: 300px;
-    height: 300px;
-    border-color: #000;
-    border-radius: 50%;
-    border: 2px solid;
-    background-color: #aaa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 300px;
+  height: 300px;
+  border-color: #000;
+  border-radius: 50%;
+  border: 2px solid;
+  background-color: #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #codigo {
-    padding: 2rem;
-    font-size: 1.3rem;
-    font-weight: bold;
+  padding: 2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 #codigo span {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 #codigo span:nth-child(odd) {
-    font-weight: bold; 
-    margin-right: 5px;
+  font-weight: bold;
+  margin-right: 5px;
 }
 
 #codigo span:nth-child(even) {
-    font-weight: normal; 
+  font-weight: normal;
 }
 
 .popUpInicial {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    z-index: 1; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0,0,0,0.6);
-    overflow: auto; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: auto;
 }
 
 .popUp {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 999; 
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
 }
 
 #popUpPerdido {
-    display: none;
+  display: none;
 }
 
 #popUpGanado {
-    display: none;
+  display: none;
 }
 
 .contenidoPopUp {
-    background-color: #fefefe;
-    padding: 8vw;
-    max-width: 90%; 
-    max-height: 50%;
-    border: 2px solid black;
-    border-radius: 150px;
-    font-size: 3vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
-    text-align: center; 
+  background-color: #fefefe;
+  padding: 8vw;
+  max-width: 90%;
+  max-height: 50%;
+  border: 2px solid black;
+  border-radius: 150px;
+  font-size: 3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 #popUpComoJugar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    z-index: 1; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0, 0, 0, 0.6);
-    overflow: auto;
-    border-radius: 20px;
-    text-align: center;
-    color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: auto;
+  border-radius: 20px;
+  text-align: center;
+  color: #000;
 }
 
 #popUpComoJugar .instrucciones {
-    background-color: #fefefe;
-    padding: 8vw;
-    max-width: 90%; 
-    max-height: 50%;
-    border: 2px solid black;
-    border-radius: 150px;
-    font-size: 3vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
-    text-align: center; 
+  background-color: #fefefe;
+  padding: 8vw;
+  max-width: 90%;
+  max-height: 50%;
+  border: 2px solid black;
+  border-radius: 150px;
+  font-size: 3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 #popUpComoJugar .botonJuguemos {
-    background-color: white; 
-    color: black; 
-    font-size: 3vw; 
-    font-weight: bold;
-    border: dashed 2px transparent;
-    border-radius: 50px; 
-    cursor: pointer;     
-    transition: font-size 0.3s;
-    height: 3vw;
-    margin-top: 30px;
+  background-color: white;
+  color: black;
+  font-size: 3vw;
+  font-weight: bold;
+  border: dashed 2px transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: font-size 0.3s;
+  height: 3vw;
+  margin-top: 30px;
 }
 
 #popUpComoJugar .botonJuguemos:hover {
-    font-family: "Lakki Reddy", serif;
-    font-size: 4vw;
-    border: none;
-    height: 3vw;
-    margin-top: 30px;
+  font-family: "Lakki Reddy", serif;
+  font-size: 4vw;
+  border: none;
+  height: 3vw;
+  margin-top: 30px;
 }
 
-
-
 #botonJuguemos {
-    background-color: white; 
-    color: black; 
-    font-size: 3vw; 
-    font-weight: bold;
-    border: dashed 2px transparent;
-    border-radius: 50px; 
-    cursor: pointer;     
-    transition: font-size 0.3s;
-    height: 3vw;
-    margin-top: 30px;
+  background-color: white;
+  color: black;
+  font-size: 3vw;
+  font-weight: bold;
+  border: dashed 2px transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: font-size 0.3s;
+  height: 3vw;
+  margin-top: 30px;
 }
 
 #botonJuguemos:hover {
-    font-family: "Lakki Reddy", serif;
-    font-size: 4vw;
-    border: none;
-    height: 3vw;
-    margin-top: 30px;
+  font-family: "Lakki Reddy", serif;
+  font-size: 4vw;
+  border: none;
+  height: 3vw;
+  margin-top: 30px;
 }
 
 .botonDeNuevo {
-    background-color: white; 
-    color: black; 
-    font-size: 3vw; 
-    font-weight: bold;
-    border: dashed 2px transparent;
-    border-radius: 50px; 
-    cursor: pointer;     
-    transition: font-size 0.3s;
-    height: 3vw;
-    margin-top: 30px;
+  background-color: white;
+  color: black;
+  font-size: 3vw;
+  font-weight: bold;
+  border: dashed 2px transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: font-size 0.3s;
+  height: 3vw;
+  margin-top: 30px;
 }
 
 .botonDeNuevo:hover {
-    font-family: "Lakki Reddy", serif;
-    font-size: 4vw;
-    border: none;
-    height: 3vw;
-    margin-top: 30px;
+  font-family: "Lakki Reddy", serif;
+  font-size: 4vw;
+  border: none;
+  height: 3vw;
+  margin-top: 30px;
 }
 
 .cajaOpciones {
-    padding-top: 5px;
-    bottom: 25px; 
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  padding-top: 5px;
+  bottom: 25px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .cajaOpciones div {
-    width: 120px;
-    height: 120px;
-    margin: 1rem;
-    border-color: #aaa;
-    border-radius: 50%;
-    border: 2px solid;
-    background-color: #aaa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.1rem;
-    padding-bottom: 15px;
+  width: 120px;
+  height: 120px;
+  margin: 1rem;
+  border-color: #aaa;
+  border-radius: 50%;
+  border: 2px solid;
+  background-color: #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menuHamburguesa {
-    display: none;
+  display: none;
+}
+
+.menuHamburguesa button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: none;
+  z-index: 1;
+}
+
+.menu button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  text-align: left;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.menu button:hover {
+  background-color: #f5f5f5;
+}
+
+.menuHamburguesa {
+  display: none;
+}
+
+.menuHamburguesa button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: none;
+  z-index: 1;
+}
+
+.menu button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  text-align: left;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.menu button:hover {
+  background-color: #f5f5f5;
 }
 
 @media screen and (max-width: 800px) {
-    .menuHamburguesa {
-        display: block; /* El botón de hamburguesa se muestra en pantallas más pequeñas */
-    }
+  .menuHamburguesa {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+  }
 
-    .menu {
-        display: none; /* El menú se oculta en pantallas más pequeñas */
-    }
-}
+  .menuHamburguesa .menu {
+    display: none;
+  }
 
-@media screen and (max-width: 799px) {
-    .menuHamburguesa {
-        display: block; /* El botón de hamburguesa se muestra en pantallas más pequeñas */
-    } 
+  .menuHamburguesa .iconoCerrar {
+    display: none;
+  }
+
+  .menuHamburguesa.active .iconoHamburguesa {
+    display: none;
+  }
+
+  .menuHamburguesa.active .iconoCerrar {
+    display: inline-block;
+  }
+
+  .menuHamburguesa.active .menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menuHamburguesa {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .iconoHamburguesa,
+  .iconoCerrar {
+    font-size: 20px;
+  }
+
+  #hamburguesa {
+    margin: 0;
+    padding: 0;
+  }
+
+  .iconoHamburguesa {
+    display: inline-block;
+  }
+
+  .iconoCerrar {
+    display: none;
+  }
+
+  .oculto {
+    display: none;
+  }
+
+  .visible {
+    display: inline-block;
+  }
+
+  .menu {
+    position: relative;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu button {
+    width: auto;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menuHamburguesa.active .menu {
+    display: block;
+  }
+
+  #nuevoJuego,
+  #comoJugar {
+    font-size: 12px;
+  }
 }
