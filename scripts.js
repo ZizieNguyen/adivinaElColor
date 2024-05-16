@@ -131,7 +131,7 @@ function comprobarColorSeleccionado() {
         mensaje.textContent = "¡Has acertado!";
         aciertos.textContent++;
         contadorAciertos++;
-        if (contadorAciertos > 3) {
+        if (contadorAciertos > 2) {
             mostrarPopUpGanado();
             reiniciarJuego();
         }
@@ -139,7 +139,7 @@ function comprobarColorSeleccionado() {
         mensaje.textContent = "¡Has fallado!";
         fallos.textContent++;
         contadorFallos++;
-        if (contadorFallos > 3) {
+        if (contadorFallos > 2) {
             mostrarPopUpPerdido();
             reiniciarJuego();
         } 
