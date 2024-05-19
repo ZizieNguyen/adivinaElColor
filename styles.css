@@ -8,7 +8,6 @@
 }
 
 header {
-    width: auto;
     background-color: #000;
     color: #fff;
     padding: 1rem;
@@ -30,11 +29,11 @@ header button {
     background-color: transparent;
     color: #fff;
     padding: 1rem;
-    overflow-wrap: normal;
     margin-right: 20px;
     font-size: 1rem;
     border: 1px solid #fff;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 main {
@@ -44,8 +43,7 @@ main {
 
 .infoPartida {
     margin: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px;
     background-color: transparent;
     border: 2px solid #000;
     border-radius: 32px;
@@ -53,7 +51,26 @@ main {
     grid-template-columns: 100px auto 100px;
 }
 
+.aciertos, .fallos, #mensaje {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
 .aciertos {
+    justify-content: flex-start;
+}
+
+.fallos {
+    justify-content: flex-end;
+}
+
+#mensaje {
+    justify-content: center;
+    padding-top: 1rem;
+}
+/* .aciertos {
     font-size: 1.2rem;
     font-weight: bold;
     display: flex;
@@ -76,13 +93,12 @@ main {
     display: flex;
     justify-content: right;
     align-items: center;
-}
+} */
 
 .cajaPrincipal {
     display: grid;
     place-items: center;
     padding-top: 2rem;
-    /* grid-template-rows: 20% 80%; */
 }
 
 #codigo {
@@ -109,7 +125,7 @@ main {
     height: 25rem;
     border-color: #000;
     border-radius: 50%;
-    border: 2px solid;
+    border: 2px solid; */ Quitar borde si conseguimos fondo de colores */
     background-color: transparent;
     display: grid;
 }
@@ -139,7 +155,7 @@ main {
 
 .popUpInicial {
     display: flex;
-    flex-direction: co;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -159,35 +175,41 @@ main {
     position: fixed; 
     top: 0; 
     left: 0; 
-    width: 100%; 
-    height: 100%;
-    z-index: 999; 
+    max-height: 60vh;    
+    max-width: 70vh;  
 }
 
 #popUpPerdido, #popUpGanado {
     display: none;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
+    z-index: 1000; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 999;
-    width: 966px;
-    height: 300px; /* Cambia la altura según sea necesario */
+    width: 80%;
+    height: 80%;
+    /* max-width: 300px; 
+    max-height: 200px;  */
+    overflow: auto; 
+}
+
+#popUpPerdido .contenidoPopUp, #popUpGanado .contenidoPopUp {
+    max-width: 30vw; 
+    padding: rem 1rem;  
 }
 
 .contenidoPopUp {
     background-color: #fefefe;
-    padding: 10vw;
-    padding-top: 12vw;
-    max-width: 80%; 
-    max-height: 80%;
-    min-width: 80%;
-    max-height: 80%;
+    width: 100vw;      
+    max-width: 80vw;  
+    max-height: 60vh; 
+    padding: 3rem 6rem; 
     border: 2px solid black;
     border-radius: 250px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -198,38 +220,48 @@ main {
 #botonJuguemos {
     background-color: white; 
     color: black; 
-    font-size: 2.8vw; 
+    font-size: 1.2em; 
     font-weight: bold;
     border: dashed 2px transparent;
     border-radius: 50px; 
     cursor: pointer;     
-    transition: font-size 0.3s;
-    height: 3vw;
-    margin-top: 15px;
+    transition: all 0.3s;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding: 0.5rem 1rem;
+    height: 2em;
+    line-height: 2em;
+    position: relative;
 }
 
 #botonJuguemos:hover {
     font-family: "Lakki Reddy", serif;
-    font-size: 3.5vw;
+    /* font-size: 1.4em;
+    height: 1em;
+    line-height: 1em; */
+    transform: scale(1.1);
 }
 
 .botonDeNuevo {
     background-color: white;
     color: black;
-    font-size: 2.8vw;
+    font-size: 1.2em; 
     font-weight: bold;
     border: dashed 2px transparent;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: font-size 0.3s;
-    height: 2vw;
-    margin-top: 30px;
-    white-space: nowrap;
+    border-radius: 50px; 
+    cursor: pointer;     
+    transition: all 0.3s;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding: 0.5rem 1rem;
+    height: 2em;
+    line-height: 2em;
+    position: relative;
 }
 
 .botonDeNuevo:hover {
     font-family: "Lakki Reddy", serif;
-    font-size: 3.5vw;
+    transform: scale(1.1);
 }
 
 .fondoTransparente {
@@ -244,13 +276,26 @@ main {
 
 @media screen and (min-width: 1024px) {
     .popUpInicial {
-        width: 966px;
-        height: 50%;
-        max-height: 60vh;      
+        max-height: 90vh;    
+        max-width: 90vh;  
+    }
+
+    .contenidoPopUp {
+        width: 90%;      
+        padding: 3rem;   
+        border-radius: 250px;
+    }
+
+    #popUpPerdido .contenidoPopUp, #popUpGanado .contenidoPopUp {
+        max-height: 90vh;    
+        max-width: 90vh; 
+        width: 90%;      
+        padding: 3rem;   
+        border-radius: 250px;
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 390px) {
     header {
         width: 100%;
         padding-right: 1rem;
@@ -260,26 +305,36 @@ main {
     }
       
     .popUpInicial {
-        padding: 10vw; 
-        border-radius: 20px; 
+        border-radius: 10px; 
+        max-width: 90%;
+        max-height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    #popUp {
-        padding: 10vw; 
-        border-radius: 20px; 
+    #popUpPerdido .contenidoPopUp, #popUpGanado .contenidoPopUp {
+        padding: 2rem 4rem 2rem;
+        width: 70vw;
+        height: 30vh;
+        max-width: none;
+        max-height: none;
     }
 
-    #popUpPerdido, #popUpGanado {
-        width: 80%; 
-        height: 80%; 
-        max-width: 300px; 
-        max-height: 200px; 
+    .contenidoPopUp {
+        padding: 3rem 4rem; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        text-align: center;
     }
     
     #botonJuguemos, .botonDeNuevo {
         font-size: 5vw; 
-        height: 4vw; 
-        margin-top: 20px;
+        height: 1.5em; 
+        line-height: 1.2em;
+        margin-top: 1rem;
         font-family: "Lakki Reddy", serif;
     }
     
@@ -294,18 +349,17 @@ main {
     }
 
     #muestra {
-        width: 20rem;
-        height: 20rem;
+        width: 21rem;
+        height: 21rem;
     }
 
     .cajaOpciones {
-        position: relative;
-        padding-top: 10rem;
-        flex-direction: row;
+        padding-top: 9rem;
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        justify-content: space-evenly;
         align-items: center;
+        margin-top: 1rem;
     }
 
     .cajaOpciones div {
