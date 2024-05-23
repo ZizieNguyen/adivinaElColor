@@ -295,6 +295,85 @@ main {
     }
 }
 
+@media screen and (max-width: 768px) {
+    header {
+        width: 100%;
+        padding-right: 1rem;
+        display: flex;
+        height: 10vh;
+        justify-content: center; 
+    }
+      
+    .popUpInicial {
+        border-radius: 10px; 
+        max-width: 90%;
+        max-height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #popUpPerdido .contenidoPopUp, #popUpGanado .contenidoPopUp {
+        padding: 2rem 4rem 2rem;
+        width: 70vw;
+        height: 30vh;
+        max-width: none;
+        max-height: none;
+    }
+
+    .contenidoPopUp {
+        padding: 3rem 4rem; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        text-align: center;
+    }
+    
+    #botonJuguemos, .botonDeNuevo {
+        font-size: 4vw; 
+        height: 1.5em; 
+        line-height: 1.2em;
+        margin-top: 1rem;
+        font-family: "Lakki Reddy", serif;
+    }
+    
+    #nuevoJuego {
+          display: none;
+    }
+
+    #mensaje {
+        font-size: 4vw; 
+        text-align: center;
+        padding-top: 2vw;
+    }
+
+    #muestra {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .cajaOpciones {
+        padding-top: 11rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cajaOpciones div {
+        width: 8rem; 
+        height: 8rem; 
+        border-color: #000;
+        border-radius: 50%;
+        border: 2px solid;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 @media screen and (max-width: 390px) {
     header {
         width: 100%;
