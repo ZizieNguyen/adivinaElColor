@@ -314,9 +314,9 @@ main {
     }
 
     #popUpPerdido .contenidoPopUp, #popUpGanado .contenidoPopUp {
-        padding: 2rem 4rem 2rem;
-        width: 70vw;
-        height: 30vh;
+        padding: 1rem 3rem 1rem;
+        width: 60vw;
+        height: 20vh;
         max-width: none;
         max-height: none;
     }
@@ -331,7 +331,7 @@ main {
     }
     
     #botonJuguemos, .botonDeNuevo {
-        font-size: 4vw; 
+        font-size: 3vw; 
         height: 1.5em; 
         line-height: 1.2em;
         margin-top: 1rem;
@@ -343,18 +343,18 @@ main {
     }
 
     #mensaje {
-        font-size: 4vw; 
+        font-size: 3vw; 
         text-align: center;
         padding-top: 2vw;
     }
 
     #muestra {
-        width: 20rem;
-        height: 20rem;
+        width: 21rem;
+        height: 21rem;
     }
 
     .cajaOpciones {
-        padding-top: 11rem;
+        padding-top: 10rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -362,8 +362,8 @@ main {
     }
 
     .cajaOpciones div {
-        width: 8rem; 
-        height: 8rem; 
+        width: 9rem; 
+        height: 9rem; 
         border-color: #000;
         border-radius: 50%;
         border: 2px solid;
