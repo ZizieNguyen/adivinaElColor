@@ -82,8 +82,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
-    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .aciertos, .record {
@@ -92,9 +91,11 @@ main {
 
 .vidas {
     color: #fff;
+    font-size: 1.2em;
 }
 
 .corazones span {
+    font-size: 3rem;
     margin: 0px 5px;
 }
 
@@ -132,21 +133,35 @@ main {
 
 #codigo span {
     color: #fff;
+    font-family: "Lakki Reddy";
+    font-size: 1.2rem;
     font-weight: bold;
     margin-left: 0.5rem;
     margin-right: 1rem;
+    text-align: center;
+    width: 80px;
+    border: 2px solid #000;
 }
 
 #codigo span:first-child {
-    color: red;
+    color: #FFF;
+    background-color: red;
+    border-radius: 24px;
+    padding-top: 0.5rem;
 }
 
 #codigo span:nth-child(2) {
-    color: #2FBC49;
+    color: #FFF;
+    background-color: green;
+    border-radius: 24px;
+    padding-top: 0.5rem;
 }
 
 #codigo span:last-child {
-    color: #00C5FF;
+    color: #FFF;
+    background-color: blue;
+    border-radius: 24px;
+    padding-top: 0.6rem;
     margin-right: 0;
 }
 
@@ -322,7 +337,7 @@ main {
     .corazones {
         width: 90px;
         height: 40px;
-        font-size: 2.4rem;
+        font-size: 2.6rem;
     }
 
     .aciertos, .record, .vidas {
@@ -330,16 +345,21 @@ main {
     }
 
     .cajaPrincipal {
-        height: 320px;
+        height: 300px;
     }
     
     #muestra {
-        width: 200px;
-        height: 200px;
+        width: 160px;
+        height: 160px;
+        border: 1px solid;
     }
 
     #codigo {
-        font-size: 1rem;
+        font-size: 1.2rem;
+    }
+
+    #codigo span {
+        border: 1px solid #000;
     }
 
     .cajaOpciones {
@@ -349,7 +369,8 @@ main {
     .opcion {
         width: 100px;
         height: 100px;
-        margin: 1rem;
+        margin: 0.5rem 1rem;
+        border: 1px solid;
     }
 }
 

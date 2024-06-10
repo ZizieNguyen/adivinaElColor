@@ -34,7 +34,7 @@ function mostrarNuevoColor() {
     const muestraColor = nuevoColor.replace('rgb(', '').replace(')', '').split(', ');
 
     muestra.style.backgroundColor = nuevoColor;
-    codigoRgb.innerHTML = `Red:<span>${muestraColor[0]}</span>Green:<span>${muestraColor[1]}</span>Blue:<span>${muestraColor[2]}</span>`;
+    codigoRgb.innerHTML = `<span>${muestraColor[0]}</span><span>${muestraColor[1]}</span><span>${muestraColor[2]}</span>`;
 
     // Obtener un índice aleatorio para colocar la opción de color correcta
     const indiceAleatorio = Math.floor(Math.random() * listaOpciones.length);
