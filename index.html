@@ -12,62 +12,74 @@
     <header class="cabecera">
         <h1 class="titulo">¡Adivina el color!</h1>
         <div>
-            <button id="nuevoJuego" id="recargaPagina">Jugar de nuevo</button>
+            <button id="nuevoJuego" id="recargaPagina">Volver a jugar</button>
         </div>
     </header>
+    
+    <section class="infoPartida">
+        <div class="marcador" id="aciertos">
+            <div class="totalAciertos">0</div>
+            <div class="aciertos">Aciertos</div>
+        </div>
+        <div class="marcador" id="vidas">
+            <div class="corazones">
+                <span>&#9829;</span>
+                <span>&#9829;</span>
+                <span>&#9829;</span>
+            </div>
+            <div class="vidas">Vidas</div>
+        </div>
+        <div class="marcador" id="record">
+            <div class="totalRecord">0</div>
+            <div class="record">Récord</div>
+        </div>
+    </section>
+    
     <main>
-        <section class="infoPartida">
-            <div class="aciertos">
-                <p>Aciertos: <strong><span id="aciertos">0</span></strong></p>
-            </div>
-
-            <div class="contenedorMensaje">
-                <p><span id="mensaje"></span></p>
-            </div>
-
-            <div class="fallos">
-                <p>Fallos: <strong><span id="fallos">0</span></strong></p>
-            </div>
-        </section>
-
         <section class="cajaPrincipal">
             <div id="muestra"></div>
-            <div id="codigo">Red: <span>0</span> Green: <span>0</span> Blue: <span>0</span></div>
+            <div id="codigo">Red:<span>0</span>Green:<span>0</span>Blue:<span>0</span></div>
         </section>
 
         <section class="cajaOpciones">
-            <div class="opcion" id="1"></div>
-            <div class="opcion" id="2"></div>
-            <div class="opcion" id="3"></div>
-            <div class="opcion" id="4"></div>
-            <div class="opcion" id="5"></div>
-            <div class="opcion" id="6"></div>
-            <div class="opcion" id="7"></div>
-            <div class="opcion" id="8"></div>
-        </section>  
+            <div class="fila">
+                <div class="opcion" id="1"></div>
+                <div class="opcion" id="2"></div>
+                <div class="opcion" id="3"></div>
+            </div>
+                
+            <div class="fila">
+                <div class="opcion" id="4"></div>
+                <div class="opcion" id="5"></div>
+                <div class="opcion" id="6"></div>
+            </div>
+        </section>
 
         <div class="fondoTransparente"></div>
         <div class="popUpInicial" id="popUpInicial">
             <div class="contenidoPopUp">
-              <p id="mensajePopUp">¡Adivina el color! Encuentra el color idéntico a la muestra del círculo central según el código RGB. Aunque la paleta de colores sea muy similar, ¡solo hay una opción válida!
-                Si el contador llega a tres aciertos ganas, pero si llega a 3 fallos pierdes… ¿Cuántos colores podrás adivinar?</p>
-              <button id="botonJuguemos">¡Juguemos!</button>
-            </div>
-        </div>     
-
-        <div class="popUp" id="popUpGanado" style="display: none;"> 
-            <div class="contenidoPopUp">
-                <p>¡Felicidades! Has ganado :)</p>
-                <button onclick="cerrarPopUp('popUpGanado')" class="botonDeNuevo">¡Juguemos de nuevo!</button>
+                <h2>¡Adivina el color!</h2>
+                <br>
+                <p>Encuentra el color idéntico a la muestra del círculo central según el código RGB.</p>
+                <br>
+                <p>Aunque la paleta de colores sea muy similar, ¡solo hay una opción válida!
+                Si llegas a tres aciertos ganas, pero si cometes 3 fallos pierdes…</p>
+                <br>
+                <p>¿Cuántos colores podrás adivinar?</p>
+                <br>
+                <button id="botonJuguemos">¡Juguemos!</button>
             </div>
         </div>
         
         <div class="popUp" id="popUpPerdido" style="display: none;"> 
             <div class="contenidoPopUp">
-                <p>Oh, qué pena, has perdido :(</p>
-                <button onclick="cerrarPopUp('popUpPerdido')" class="botonDeNuevo">¡Juguemos de nuevo!</button>
+                <h2>Oh, qué pena 😢</h2>
+                <br>
+                <p>Has perdido... ¡pero puedes intentarlo siempre que quieras!</p>
+                <button onclick="cerrarPopUp('popUpPerdido')" class="botonDeNuevo">¡Juega de nuevo!</button>
             </div>
         </div>
+
     </main>
     <script src="scripts.js"></script>
 </body>
